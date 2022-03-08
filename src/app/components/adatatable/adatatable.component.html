@@ -1,0 +1,37 @@
+<app-header></app-header>
+<div class="container p-4">
+    <div class="row">
+
+        <table datatable [dtOptions]="dtOptions" class="display" id="example">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="userdata?.length != 0">
+                <tr *ngFor="let person of userdata">
+                    <td>{{ person.id }}</td>
+                    <td>{{ person.firstName }}</td>
+                    <td>{{ person.lastName }}</td>
+                </tr>
+            </tbody>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>First name</th>
+                    <th>Last name</th>
+                </tr>
+            </thead>
+            <tbody *ngIf="userdata?.length == 0">
+                <tr>
+                    <td colspan="3" class="no-data-available">No data!</td>
+                </tr>
+            </tbody>
+        </table>
+        <br>
+        <hr>
+        <br>
+    </div>
+</div>
